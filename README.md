@@ -2,11 +2,9 @@ This is the main project to run [Actual](https://github.com/actualbudget/actual)
 
 Join the [discord](https://discord.gg/pRYNYr4W5A)!
 
-# AnonymousOverflow
+# ActualBudget
 
-AnonymousOverflow allows you to view StackOverflow threads without the cluttered interface and exposing your IP address, browsing habits and other browser fingerprint data to StackOverflow.
-
-This project is super lightweight by design. The UI is simple and the frontend is served as an SSR HTML requiring no JavaScript.
+Actual is a super fast privacy-focused app for managing your finances. You own your data, and we will sync it across all devices with optional end-to-end encryption.
 
 ## Security Audits:
 
