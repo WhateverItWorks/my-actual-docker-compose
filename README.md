@@ -2,93 +2,36 @@ This is the main project to run [Actual](https://github.com/actualbudget/actual)
 
 Join the [discord](https://discord.gg/pRYNYr4W5A)!
 
-## Non-technical users
+# AnonymousOverflow
 
-We are working on simpler one-button click deployments of Actual. This will reduce the friction for people not as comfortable with the command line. Some non-official options are listed at the bottom.
+AnonymousOverflow allows you to view StackOverflow threads without the cluttered interface and exposing your IP address, browsing habits and other browser fingerprint data to StackOverflow.
 
-## Running
+This project is super lightweight by design. The UI is simple and the frontend is served as an SSR HTML requiring no JavaScript.
 
-It's very easy to get started. Clone this repo, install deps, and start it:
+## Security Audits:
 
-```
-git clone https://github.com/actualbudget/actual-server.git
-cd actual-server
-yarn install
-yarn start
-```
+- [Internet.ml](https://internet.nl/site/budget.xbdm.fun/2060148/)
+- [Mozilla.org](https://observatory.mozilla.org/)
+- [ImmuniWeb](https://www.immuniweb.com/ssl/budget.xbdm.fun/a8FxuGr6/)
+- [HSTS Preload](https://hstspreload.org/)
+- [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=budget.xbdm.fun)
+- [Security Headers](https://securityheaders.com/?q=budget.xbdm.fun&hide=on&followRedirects=on)
 
-Go to https://localhost:5006 in your browser and you'll see Actual.
 
-## Running via Docker
+## Usage:
 
-To run using a Docker container you can use following commands;
+1. Buy [Hetzner](https://hetzner.com) it's 100% renewal hardware and you get affordable dedicated servers, and you also help save the world.
 
-```
-git clone https://github.com/actualbudget/actual-server.git
-cd actual-server
-docker build -t actual-server .
-docker run -p 5006:5006 actual-server
-```
+2. Get [Cloudflare](https://cloudflare.com) it's carbon renewal and you help save the world.
 
-The multi-arch Docker container image runs on amd64, arm64, and armv7 platforms. Please be warned that Actual may be sluggish on armv7, but users report that it does work.
+3. ```apt install git```
 
-## Deploying
+4. ```git clone https://github.com/WhateverItWorks/my-actual-docker-compose.git actual```
 
-You should deploy your server so it's always running. We recommend [fly.io](https://fly.io) which makes it incredibly easy and provides a free plan.
+5. ```nano docker-compose.yml```
 
-[fly.io](https://fly.io) allows running the application directly and provides a free tier. You should be comfortable with using the command line to set it up though.
+6. ```docker-compose up -d```
 
-[Create an account](https://fly.io/app/sign-in). Although you are required to enter payment details, everything we do here will work on the free tier and you won't be charged.
 
-Next, [install the `flyctl`](https://fly.io/docs/flyctl/installing/) utility. Run `flyctl auth login` to sign into your account.
 
-Copy `fly.template.toml` to `fly.toml`. Open `fly.toml` and customize the app name on the first line of the file.
-
-Now, run `flyctl launch` from `actual-server`. You should have a running app now! To get to the Actual UI, simply run `flyctl open`
-
-Whenever you want to update Actual, update the versions of `@actual-app/api` and `@actual-app/web` in `package.json` and run `flyctl deploy`.
-
-### Using a custom Docker setup
-
-Actual is also available as a Docker image ready to be run in your own custom environment.
-
-- Docker Hub: `actualbudget/actual-server`
-- Github Registry: `ghcr.io/actualbudget/actual-server`
-
-### Persisting server data
-
-One problem with the above setup is every time you deploy, it will wipe away all the data on the server. You'll need to bootstrap the instance again and upload your files.
-
-Let's move the data somewhere that persists. With [fly.io](https://fly.io) we can create a [volume](https://fly.io/docs/reference/volumes/). Run this command:
-
-```
-flyctl volumes create actual_data
-```
-
-Now we need to tell Actual to use this volume. Add this in `fly.toml`:
-
-```
-[mounts]
-  source="actual_data"
-  destination="/data"
-```
-
-That's it! Actual will automatically check if the `/data` directory exists and use it automatically.
-
-### One-click hosting solutions
-
-These are non-official methods of one-click solutions for running Actual. If you provide a service like this, feel free to open a PR and add it to this list. These run Actual via a Docker image.
-
-- PikaPods: [Run on PikaPods](https://www.pikapods.com/pods?run=actual)
-
-## Configuring the server
-
-The server accepts several configuration options, including for HTTPS certificates and various file paths. The documentation website has [a page dedicated to configuration options](https://actualbudget.github.io/docs/Installing/Configuration)
-
-## Configuring the server URL
-
-The Actual app is totally separate from the server. In this project, they happen to both be served by the same server, but the app doesn't know where the server lives.
-
-The server could live on a completely different domain. You might setup Actual so that the app and server are running in completely separate places.
-
-Since Actual doesn't know what server to use, the first thing it does is asks you for the server URL. If you are running this project, simply click "Use this domain" and it will automatically fill it in with the current domain. This works because we are serving the app and server in the same place.
+```http://localhost:5006```
