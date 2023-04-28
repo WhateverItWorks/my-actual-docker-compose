@@ -4,7 +4,7 @@ Join the [discord](https://discord.gg/pRYNYr4W5A)!
 
 # ActualBudget
 
-Actual is a super fast privacy-focused app for managing your finances. You own your data, and we will sync it across all devices with optional end-to-end encryption.
+Actual is a super fast privacy-focused app for managing your finances. You own your data, and they will sync it across all devices with optional end-to-end encryption.
 
 ## Security Audits:
 
