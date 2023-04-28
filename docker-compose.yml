@@ -9,7 +9,6 @@ services:
     read_only: true
     ports:
       - '5006:5006'
-
     environment:
       # Sync your bank account: https://nordigen.com/en/
       # - ACTUAL_NORDIGEN_SECRET_ID=xxxx
